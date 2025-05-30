@@ -27,11 +27,6 @@ public class PermissionBlock implements Extension {
 
         @Override
         public @NonNull TriState hasPermission(@NonNull CommandSource source, @NonNull String permission) {
-            // Fallback to other permission checkers
-            if (source.hasPermission("permissionblock.exempt")) {
-                return TriState.NOT_SET;
-            }
-
             // Block all permissions. Console will never run into this check!
             return TriState.FALSE;
         }
